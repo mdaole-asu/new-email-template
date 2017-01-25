@@ -121,20 +121,20 @@
 			border-color: #ffd35a !important;
 		}
 		
-		.arrow {
+		.button-a .arrow {
 			display: none;
 		}
 		
 		.button-a:hover .arrow {
 			display: inline-block;
-			-webkit-animation: slideIn .3s forwards;
-			-moz-animation: slideIn .3s forwards;
-			animation: slideIn .3s forwards;
+			-webkit-animation: slideIn .4s forwards;
+			-moz-animation: slideIn .4s forwards;
+			animation: slideIn .4s forwards;
 		}
 		
 		@-webkit-keyframes slideIn {
 			0% {
-				transform: translateX(-10px);
+				transform: translateX(-5px);
 			}
 			100% {
 				transform: translateX(0);
@@ -143,7 +143,7 @@
 		
 		@-moz-keyframes slideIn {
 			0% {
-				transform: translateX(-10px);
+				transform: translateX(-5px);
 			}
 			100% {
 				transform: translateX(0);
@@ -152,7 +152,7 @@
 		
 		@keyframes slideIn {
 			0% {
-				transform: translateX(-10px);
+				transform: translateX(-5px);
 			}
 			100% {
 				transform: translateX(0);
@@ -203,7 +203,11 @@
 		
 		@media screen and (max-width: 480px) {
 			.headerIMG {
-				width: 250px;
+				width: 200px;
+			}
+			.collegeName {
+				font-size: 18px;
+				padding: 10px;
 			}
 		}
 	</style>
@@ -215,8 +219,11 @@
 		<table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" width="600" style="margin: auto;" class="email-container">
 			<tr>
 				<td style="padding: 0; text-align: center">
-					<a href="http://my.asu.edu"><img class="headerIMG" src="http://image.reply.asu.edu/lib/fe8d137272610d7c76/m/2/09609d1b-b7c5-411e-8821-32fb20d677b9.png" alt="Arizona State University" width="300" style="display: block; color: #ffc627; font-size: 36px;"></a>
+					<a href="http://my.asu.edu"><img class="headerIMG" src="http://image.reply.asu.edu/lib/fe8d137272610d7c76/m/2/09609d1b-b7c5-411e-8821-32fb20d677b9.png" alt="Arizona State University" width="250" style="display: block; color: #ffc627; font-size: 36px;"></a>
 				</td>
+			</tr>
+			<tr>
+				<td style="text-align: left; font-family: Arial, 'Roboto', 'Helvetica Neue', Helvetica, sans-serif; font-size: 20px; line-height: 36px; color: #333333;"> <strong class="collegeName">W. P. Carey School of Business</strong> </td>
 			</tr>
 		</table>
 		<!-- Email Header : END -->
@@ -307,37 +314,6 @@
 			<!-- 3 Even Columns : END -->
 		</table>
 		<!-- Email Body : END -->
-		<table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" width="600" style="margin: 0;padding:0;vertical-align:baseline;display:block;" class="email-container" bgcolor="#000000">
-			<tr>
-				<td align="center" valign="top" style="padding: 10px;">
-					<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-						<tr>
-							<!-- Column : BEGIN -->
-							<td class="stack-column-center">
-								<table role="presentation" cellspacing="0" cellpadding="0" border="0">
-									<tr>
-										<td></td>
-									</tr>
-								</table>
-							</td>
-							<!-- Column : END -->
-							<!-- Column : BEGIN -->
-							<td class="stack-column-center">
-								<table role="presentation" cellspacing="0" cellpadding="0" border="0">
-									<tr>
-										<td style="text-align: center;"> <img src="http://image.reply.asu.edu/lib/fe8d137272610d7c76/m/1/ce10656b-000e-450d-ac9c-ca8947f78fea.png" width="50" alt=""> </td>
-										<td style="text-align: center;"> <img src="http://image.reply.asu.edu/lib/fe8d137272610d7c76/m/1/d84ec11e-2078-4db9-9cdd-3f14617fa0ae.png" width="50" alt=""> </td>
-										<td style="text-align: center;"> <img src="http://image.reply.asu.edu/lib/fe8d137272610d7c76/m/1/096dd322-c205-434e-8299-5a4aefa170e8.png" width="50" alt=""> </td>
-										<td style="text-align: center;"> <img src="http://image.reply.asu.edu/lib/fe8d137272610d7c76/m/1/ab218cde-5fcf-4478-bf3e-df6b4678f90a.png" width="50" alt=""> </td>
-									</tr>
-								</table>
-							</td>
-							<!-- Column : END -->
-						</tr>
-					</table>
-				</td>
-			</tr>
-		</table>
 		<table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" width="600" style="margin: 0;padding:0;vertical-align:baseline;" class="email-container" bgcolor="#ffc627">
 			<!-- 2 Even Columns : BEGIN -->
 			<tr>
@@ -368,10 +344,34 @@
 			</tr>
 			<!-- 2 Even Columns : END -->
 		</table>
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" width="600" style="margin: 0;padding:0;vertical-align:baseline;display:block;" class="email-container" bgcolor="#f1f1f1">
+			<tr>
+				<td align="center" valign="top" style="padding: 10px;">
+					<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+						<tr>
+							<!-- Column : BEGIN -->
+							<td class="stack-column-center">
+								<table role="presentation" cellspacing="0" cellpadding="0" border="0">
+									<tr>
+										<td style="text-align: center;"> <img src="http://image.reply.asu.edu/lib/fe8d137272610d7c76/m/1/ce10656b-000e-450d-ac9c-ca8947f78fea.png" width="50" alt=""> </td>
+										<td style="text-align: center;"> <img src="http://image.reply.asu.edu/lib/fe8d137272610d7c76/m/1/d84ec11e-2078-4db9-9cdd-3f14617fa0ae.png" width="50" alt=""> </td>
+										<td style="text-align: center;"> <img src="http://image.reply.asu.edu/lib/fe8d137272610d7c76/m/1/096dd322-c205-434e-8299-5a4aefa170e8.png" width="50" alt=""> </td>
+										<td style="text-align: center;"> <img src="http://image.reply.asu.edu/lib/fe8d137272610d7c76/m/1/ab218cde-5fcf-4478-bf3e-df6b4678f90a.png" width="50" alt=""> </td>
+									</tr>
+								</table>
+							</td>
+							<!-- Column : END -->
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
 		<!-- Email Footer : BEGIN -->
 		<table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" width="600" style="margin: auto; border-collapse: collapse;" class="email-container">
 			<tr>
-				<td style="padding: 10px;width: 100%;font-size: 10px; font-family: Arial, 'Roboto', 'Helvetica Neue', Helvetica, sans-serif; line-height:12px; text-align: left; color: #888888;"> By providing your email address, you gave Arizona State University permission to send electronic communications.
+				<td style="padding: 10px;width: 100%;font-size: 10px; font-family: Arial, 'Roboto', 'Helvetica Neue', Helvetica, sans-serif; line-height:12px; text-align: center; color: #888888;"> Sent with &hearts; from ASU
+					<br>
+					<br> By providing your email address, you gave Arizona State University permission to send electronic communications.
 					<br>
 					<br> Arizona State University | Admission Services | PO Box 871002 | Tempe, AZ 85287-1002
 					<br>
