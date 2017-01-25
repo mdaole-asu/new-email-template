@@ -117,8 +117,46 @@
 		
 		.button-td:hover,
 		.button-a:hover {
-			background: #555555 !important;
-			border-color: #555555 !important;
+			background: #ffd35a !important;
+			border-color: #ffd35a !important;
+		}
+		
+		.arrow {
+			display: none;
+		}
+		
+		.button-a:hover .arrow {
+			display: inline-block;
+			-webkit-animation: slideIn .3s forwards;
+			-moz-animation: slideIn .3s forwards;
+			animation: slideIn .3s forwards;
+		}
+		
+		@-webkit-keyframes slideIn {
+			0% {
+				transform: translateX(-10px);
+			}
+			100% {
+				transform: translateX(0);
+			}
+		}
+		
+		@-moz-keyframes slideIn {
+			0% {
+				transform: translateX(-10px);
+			}
+			100% {
+				transform: translateX(0);
+			}
+		}
+		
+		@keyframes slideIn {
+			0% {
+				transform: translateX(-10px);
+			}
+			100% {
+				transform: translateX(0);
+			}
 		}
 		
 		.bannerIMG {
@@ -191,7 +229,15 @@
 			</tr>
 			<!-- 1 Column Text : BEGIN -->
 			<tr>
-				<td style="text-align: left; font-family: Arial, 'Roboto', 'Helvetica Neue', Helvetica, sans-serif; font-size: 16px; line-height: 22px; color: #333333; padding: 10px"> Maecenas sed ante pellentesque, posuere leo id, eleifend dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent laoreet malesuada cursus. Maecenas scelerisque congue eros eu posuere. Praesent in felis ut velit pretium lobortis rhoncus ut&nbsp;erat. </td>
+				<td style="text-align: left; font-family: Arial, 'Roboto', 'Helvetica Neue', Helvetica, sans-serif; font-size: 16px; line-height: 22px; color: #333333; padding: 10px"> Maecenas sed ante pellentesque, posuere leo id, eleifend dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent laoreet malesuada cursus. Maecenas scelerisque congue eros eu posuere. Praesent in felis ut velit pretium lobortis rhoncus ut&nbsp;erat.
+					<table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" style="margin: auto">
+						<tr>
+							<td style="border-radius: 3px; background: #ffc627; text-align: center;" class="button-td"> <a href="http://www.google.com" style="background: #ffc627; border: 15px solid #ffc627; font-family: sans-serif; font-size: 16px; line-height: .5; text-align: center; text-decoration: none; display: block; border-radius: 4px; font-weight: bold; width: 250px; text-decoration: none; color: #333333" class="button-a">
+                                    &nbsp;&nbsp;<span style="color:#333333;">Log into My ASU</span><span class="arrow"> &#10142;</span>&nbsp;&nbsp;
+                                </a> </td>
+						</tr>
+					</table>
+				</td>
 			</tr>
 			<!-- 1 Column Text : BEGIN -->
 			<!-- 2 Even Columns : BEGIN -->
@@ -269,7 +315,9 @@
 							<!-- Column : BEGIN -->
 							<td class="stack-column-center">
 								<table role="presentation" cellspacing="0" cellpadding="0" border="0">
-									<tr><td></td></tr>
+									<tr>
+										<td></td>
+									</tr>
 								</table>
 							</td>
 							<!-- Column : END -->
@@ -290,10 +338,9 @@
 				</td>
 			</tr>
 		</table>
-		
 		<table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" width="600" style="margin: 0;padding:0;vertical-align:baseline;" class="email-container" bgcolor="#ffc627">
 			<!-- 2 Even Columns : BEGIN -->
-<tr>
+			<tr>
 				<td bgcolor="#ffc627" align="center" valign="top" style="">
 					<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
 						<tr>
