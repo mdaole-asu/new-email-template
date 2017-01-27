@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta charset="utf-8">
+	<!-- utf-8 works for most cases -->
+	<meta name="viewport" content="width=device-width">
+	<!-- Forcing initial-scale shouldn't be necessary -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- Use the latest (edge) version of IE rendering engine -->
+	<meta name="x-apple-disable-message-reformatting">
+	<!-- Disable auto-scale in iOS 10 Mail entirely -->
+	<title>Arizona State University</title>
+	<!-- The title tag shows in email notifications, like Android 4.4. -->
+	<!-- Web Font / @font-face : BEGIN -->
+	<!-- NOTE: If web fonts are not required, lines 10 - 27 can be safely removed. -->
+	<!-- Desktop Outlook chokes on web font references and defaults to Times New Roman, so we force a safe fallback font. -->
+	<!--[if mso]>
+		<style>
+			* {
+				font-family: Arial, 'Roboto', 'Helvetica Neue', Helvetica, sans-serif;
+			}
+		</style>
+	<![endif]-->
+	<!-- All other clients get the webfont reference; some will render the font and others will silently fail to the fallbacks. More on that here: http://stylecampaign.com/blog/2015/02/webfont-support-in-email/ -->
+	<!--[if !mso]><!-->
+	<!-- insert web font reference, eg: <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'> -->
+	<!--<![endif]-->
+	<!-- Web Font / @font-face : END -->
+	<!-- CSS Reset -->
+	<style>
+		/* What it does: Remove spaces around the email design added by some email clients. */
+		/* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */
+		
+		@import url(http://fonts.googleapis.com/css?family=Roboto:400,300italic,300,100italic,100,700,400italic,500,500italic,700italic,900,900italic);
+		html,
+		body {
+			margin: 0 auto !important;
+			padding: 0 !important;
+			height: 100% !important;
+			width: 100% !important;
+		}
+		/* What it does: Stops email clients resizing small text. */
+		
+		* {
+			-ms-text-size-adjust: 100%;
+			-webkit-text-size-adjust: 100%;
+		}
+		/* What is does: Centers email on Android 4.4 */
+		
+		div[style*="margin: 16px 0"] {
+			margin: 0 !important;
+		}
+		/* What it does: Stops Outlook from adding extra spacing to tables. */
+		
+		table,
+		td {
+			mso-table-lspace: 0pt !important;
+			mso-table-rspace: 0pt !important;
+		}
+		/* What it does: Fixes webkit padding issue. Fix for Yahoo mail table alignment bug. Applies table-layout to the first 2 tables then removes for anything nested deeper. */
+		
+		table {
+			border-spacing: 0 !important;
+			border-collapse: collapse !important;
+			table-layout: fixed !important;
+			margin: 0 auto !important;
+		}
+		
+		table table table {
+			table-layout: auto;
+		}
+		/* What it does: Uses a better rendering method when resizing images in IE. */
+		
+		img {
+			-ms-interpolation-mode: bicubic;
+		}
+		/* What it does: A work-around for iOS meddling in triggered links. */
+		
+		.mobile-link--footer a,
+		*[x-apple-data-detectors] {
+			color: inherit !important;
+			text-decoration: none !important;
+		}
+		/* What it does: A work-around for Gmail meddling in triggered links. */
+		
+		.x-gmail-data-detectors,
+		.x-gmail-data-detectors *,
+		.aBn {
+			border-bottom: 0 !important;
+			cursor: default !important;
+		}
+		/* What it does: Prevents underlining the button text in Windows 10 */
+		
+		.button-link {
+			text-decoration: none !important;
+		}
+		/* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */
+		/* Create one of these media queries for each additional viewport size you'd like to fix */
+		/* Thanks to Eric Lepetit @ericlepetitsf) for help troubleshooting */
+		
+		@media only screen and (min-device-width: 375px) and (max-device-width: 413px) {
+			/* iPhone 6 and 6+ */
+			.email-container {
+				min-width: 375px !important;
+			}
+		}
+	</style>
+	<!-- Progressive Enhancements -->
+	<style>
+		/* What it does: Hover styles for buttons */
+		
+		.button-td,
+		.button-a {
+			transition: all 100ms ease-in;
+		}
+		
+		.button-td:hover,
+		.button-a:hover {
+			background: #ffd35a !important;
+			border-color: #ffd35a !important;
+		}
+		
+		.button-a .arrow {
+			display: none;
+		}
+		
+		.button-a:hover .arrow {
+			display: inline-block;
+			-webkit-animation: slideIn .4s forwards;
+			-moz-animation: slideIn .4s forwards;
+			animation: slideIn .4s forwards;
+		}
+		
+		@-webkit-keyframes slideIn {
+			0% {
+				transform: translateX(-5px);
+			}
+			100% {
+				transform: translateX(0);
+			}
+		}
+		
+		@-moz-keyframes slideIn {
+			0% {
+				transform: translateX(-5px);
+			}
+			100% {
+				transform: translateX(0);
+			}
+		}
+		
+		@keyframes slideIn {
+			0% {
+				transform: translateX(-5px);
+			}
+			100% {
+				transform: translateX(0);
+			}
+		}
+		
+		.bannerIMG {
+			max-width: 100%;
+		}
+		/* Media Queries */
+		
+		@media screen and (max-width: 600px) {
+			.email-container {
+				width: 100% !important;
+				margin: auto !important;
+			}
+			/* What it does: Forces elements to resize to the full width of their container. Useful for resizing images beyond their max-width. */
+			.fluid {
+				max-width: 100% !important;
+				height: auto !important;
+				margin-left: auto !important;
+				margin-right: auto !important;
+			}
+			/* What it does: Forces table cells into full-width rows. */
+			.stack-column,
+			.stack-column-center {
+				display: block !important;
+				width: 100% !important;
+				max-width: 100% !important;
+				direction: ltr !important;
+			}
+			/* And center justify these ones. */
+			.stack-column-center {
+				text-align: left !important;
+			}
+			/* What it does: Generic utility class for centering. Useful for images, buttons, and nested tables. */
+			.center-on-narrow {
+				text-align: left !important;
+				display: block !important;
+				margin-left: auto !important;
+				margin-right: auto !important;
+				float: none !important;
+			}
+			table.center-on-narrow {
+				display: inline-block !important;
+			}
+		}
+		
+		@media screen and (max-width: 480px) {
+			.headerIMG {
+				width: 200px;
+			}
+			.collegeName {
+				font-size: 18px;
+				padding: 10px;
+			}
+		}
+	</style>
+</head>
+
+<body width="100%" bgcolor="#f1f1f1" style="margin: 0; mso-line-height-rule: exactly;padding: 10px;">
+	<center style="width: 100%; background: #f1f1f1;">
+		<!-- Email Header : BEGIN -->
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" width="600" style="margin: auto;" class="email-container">
+			<tr>
+				<td style="padding: 0; text-align: center">
+					<a href="http://my.asu.edu"><img class="headerIMG" src="http://image.reply.asu.edu/lib/fe8d137272610d7c76/m/2/09609d1b-b7c5-411e-8821-32fb20d677b9.png" alt="Arizona State University" width="250" style="display: block; color: #ffc627; font-size: 36px;"></a>
+				</td>
+			</tr>
+			<tr>
+				<td style="text-align: left; font-family: Arial, 'Roboto', 'Helvetica Neue', Helvetica, sans-serif; font-size: 20px; line-height: 36px; color: #000000;"> <strong class="collegeName">W. P. Carey School of Business</strong> </td>
+			</tr>
+		</table>
+		<!-- Email Header : END -->
+		<!-- Email Body : BEGIN -->
+		<table bgcolor="#ffffff" role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" width="600" style="margin: auto;" class="email-container">
+			<tr>
+				<td style="padding: 0; text-align: center">
+					<a href="http://my.asu.edu"><img class="bannerIMG" src="http://image.reply.asu.edu/lib/fe8d137272610d7c76/m/2/88919bab-d39a-46c3-a355-b6e0dc428692.jpg" alt="Arizona State University" style="display: block; color: #ffc627; font-size: 36px;"></a>
+				</td>
+			</tr>
+			<!-- 1 Column Text : BEGIN -->
+			<tr>
+				<td style="text-align: left; font-family: Arial, 'Roboto', 'Helvetica Neue', Helvetica, sans-serif; font-size: 16px; line-height: 22px; color: #000000; padding: 10px"> Maecenas sed ante pellentesque, posuere leo id, eleifend dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent laoreet malesuada cursus. Maecenas scelerisque congue eros eu posuere. Praesent in felis ut velit pretium lobortis rhoncus ut&nbsp;erat.
+					<br>
+					<br>
+					<table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" style="margin: auto">
+						<tr>
+							<td style="border-radius: 3px; background: #ffc627; text-align: center;" class="button-td"> <a href="http://my.asu.edu" target="_blank" style="background: #ffc627; border: 15px solid #ffc627; font-family: sans-serif; font-size: 16px; line-height: .5; text-align: center; text-decoration: none; display: block; border-radius: 4px; font-weight: bold; width: 250px; text-decoration: none; color: #000000" class="button-a">
+                                    &nbsp;&nbsp;<span style="color:#000000;">Log into My ASU</span><span class="arrow"> &#10142;</span>&nbsp;&nbsp;
+                                </a> </td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<!-- 1 Column Text : BEGIN -->
+			<!-- 2 Even Columns : BEGIN -->
+			<tr>
+				<td bgcolor="#ffffff" align="center" valign="top" style="padding: 0px;">
+					<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+						<tr>
+							<!-- Column : BEGIN -->
+							<td class="stack-column-center">
+								<table role="presentation" cellspacing="0" cellpadding="0" border="0">
+									<tr>
+										<td style="font-family: Arial, 'Roboto', 'Helvetica Neue', Helvetica, sans-serif; font-size: 16px; line-height: 22px; color: #000000; padding: 10px; text-align: left;" class="center-on-narrow"> Maecenas sed ante pellentesque, posuere leo id, eleifend dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. </td>
+									</tr>
+								</table>
+							</td>
+							<!-- Column : END -->
+							<!-- Column : BEGIN -->
+							<td class="stack-column-center">
+								<table role="presentation" cellspacing="0" cellpadding="0" border="0">
+									<tr>
+										<td style="font-family: Arial, 'Roboto', 'Helvetica Neue', Helvetica, sans-serif; font-size: 16px; line-height: 22px; color: #000000; padding: 10px; text-align: left;" class="center-on-narrow"> Maecenas sed ante pellentesque, posuere leo id, eleifend dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. </td>
+									</tr>
+								</table>
+							</td>
+							<!-- Column : END -->
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<!-- 2 Column Buttons : BEGIN -->
+			<tr>
+				<td bgcolor="#ffffff" align="center" valign="top" style="padding: 0px;">
+					<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+						<tr>
+							<!-- Column : BEGIN -->
+							<td class="stack-column-center">
+								<table role="presentation" cellspacing="0" cellpadding="0" border="0">
+									<tr>
+										<td style="font-family: Arial, 'Roboto', 'Helvetica Neue', Helvetica, sans-serif; font-size: 16px; line-height: 22px; color: #000000; padding: 10px; text-align: left;" class="center-on-narrow">
+											<table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" style="margin: auto">
+												<tr>
+													<td style="border-radius: 3px; background: #ffc627; text-align: center;" class="button-td"> <a href="https://about.asu.edu/rankings" target="_blank" style="background: #ffc627; border: 15px solid #ffc627; font-family: sans-serif; font-size: 16px; line-height: .5; text-align: center; text-decoration: none; display: block; border-radius: 4px; font-weight: bold; width: 250px; text-decoration: none; color: #000000" class="button-a">
+                                    &nbsp;&nbsp;<span style="color:#000000;">Learn about innovation</span><span class="arrow"> &#10142;</span>&nbsp;&nbsp;
+                                </a> </td>
+												</tr>
+											</table>
+										</td>
+									</tr>
+								</table>
+							</td>
+							<!-- Column : END -->
+							<!-- Column : BEGIN -->
+							<td class="stack-column-center">
+								<table role="presentation" cellspacing="0" cellpadding="0" border="0">
+									<tr>
+										<td style="font-family: Arial, 'Roboto', 'Helvetica Neue', Helvetica, sans-serif; font-size: 16px; line-height: 22px; color: #000000; padding: 10px; text-align: left;" class="center-on-narrow">
+											<table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" style="margin: auto">
+												<tr>
+													<td style="border-radius: 3px; background: #ffc627; text-align: center;" class="button-td"> <a href="http://visit.asu.edu" style="background: #ffc627; border: 15px solid #ffc627; font-family: sans-serif; font-size: 16px; line-height: .5; text-align: center; text-decoration: none; display: block; border-radius: 4px; font-weight: bold; width: 250px; text-decoration: none; color: #000000" class="button-a">
+                                    &nbsp;&nbsp;<span style="color:#000000;">Visit ASU</span><span class="arrow"> &#10142;</span>&nbsp;&nbsp;
+                                </a> </td>
+												</tr>
+											</table>
+										</td>
+									</tr>
+								</table>
+							</td>
+							<!-- Column : END -->
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<!-- 2 Column Buttons : END -->
+			<!-- 2 Even Columns : END -->
+			<!-- 3 Even Columns : BEGIN -->
+			<tr>
+				<td bgcolor="#ffffff" align="center" valign="top" style="">
+					<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+						<tr>
+							<!-- Column : BEGIN -->
+							<td width="33.33%" class="stack-column-center">
+								<table role="presentation" cellspacing="0" cellpadding="0" border="0">
+									<tr>
+										<td style="font-family: Arial, 'Roboto', 'Helvetica Neue', Helvetica, sans-serif; font-size: 16px; line-height: 22px; color: #000000; padding: 10px; text-align: left;" class="center-on-narrow"> Maecenas sed ante pellentesque, posuere leo id, eleifend dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. </td>
+									</tr>
+								</table>
+							</td>
+							<!-- Column : END -->
+							<!-- Column : BEGIN -->
+							<td width="33.33%" class="stack-column-center">
+								<table role="presentation" cellspacing="0" cellpadding="0" border="0">
+									<tr>
+										<td style="font-family: Arial, 'Roboto', 'Helvetica Neue', Helvetica, sans-serif; font-size: 16px; line-height: 22px; color: #000000; padding: 10px; text-align: left;" class="center-on-narrow"> Maecenas sed ante pellentesque, posuere leo id, eleifend dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. </td>
+									</tr>
+								</table>
+							</td>
+							<!-- Column : END -->
+							<!-- Column : BEGIN -->
+							<td width="33.33%" class="stack-column-center">
+								<table role="presentation" cellspacing="0" cellpadding="0" border="0">
+									<tr>
+										<td style="font-family: Arial, 'Roboto', 'Helvetica Neue', Helvetica, sans-serif; font-size: 16px; line-height: 22px; color: #000000; padding: 10px; text-align: left;" class="center-on-narrow"> Maecenas sed ante pellentesque, posuere leo id, eleifend dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. </td>
+									</tr>
+								</table>
+							</td>
+							<!-- Column : END -->
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<!-- 3 Even Columns : END -->
+			<!-- 3 Column Buttons : BEGIN -->
+			<tr>
+				<td bgcolor="#ffffff" align="center" valign="top" style="">
+					<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+						<tr>
+							<!-- Column : BEGIN -->
+							<td width="33.33%" class="stack-column-center">
+								<table role="presentation" cellspacing="0" cellpadding="0" border="0">
+									<tr>
+										<td style="font-family: Arial, 'Roboto', 'Helvetica Neue', Helvetica, sans-serif; font-size: 16px; line-height: 22px; color: #000000; padding: 10px; text-align: left;" class="center-on-narrow">
+											<table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" style="margin: auto">
+												<tr>
+													<td style="border-radius: 3px; background: #ffc627; text-align: center;" class="button-td"> <a href="http://www.google.com" style="background: #ffc627; border: 15px solid #ffc627; font-family: sans-serif; font-size: 16px; line-height: .5; text-align: center; text-decoration: none; display: block; border-radius: 4px; font-weight: bold; width: 150px; text-decoration: none; color: #000000" class="button-a">
+                                    &nbsp;&nbsp;<span style="color:#000000;">Undergraduate</span><span class="arrow"> &#10142;</span>&nbsp;&nbsp;
+                                </a> </td>
+												</tr>
+											</table>
+										</td>
+									</tr>
+								</table>
+							</td>
+							<!-- Column : END -->
+							<!-- Column : BEGIN -->
+							<td width="33.33%" class="stack-column-center">
+								<table role="presentation" cellspacing="0" cellpadding="0" border="0">
+									<tr>
+										<td style="font-family: Arial, 'Roboto', 'Helvetica Neue', Helvetica, sans-serif; font-size: 16px; line-height: 22px; color: #000000; padding: 10px; text-align: left;" class="center-on-narrow">
+											<table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" style="margin: auto">
+												<tr>
+													<td style="border-radius: 3px; background: #ffc627; text-align: center;" class="button-td"> <a href="http://www.google.com" style="background: #ffc627; border: 15px solid #ffc627; font-family: sans-serif; font-size: 16px; line-height: .5; text-align: center; text-decoration: none; display: block; border-radius: 4px; font-weight: bold; width: 150px; text-decoration: none; color: #000000" class="button-a">
+                                    &nbsp;&nbsp;<span style="color:#000000;">Graduate</span><span class="arrow"> &#10142;</span>&nbsp;&nbsp;
+                                </a> </td>
+												</tr>
+											</table>
+										</td>
+									</tr>
+								</table>
+							</td>
+							<!-- Column : END -->
+							<!-- Column : BEGIN -->
+							<td width="33.33%" class="stack-column-center">
+								<table role="presentation" cellspacing="0" cellpadding="0" border="0">
+									<tr>
+										<td style="font-family: Arial, 'Roboto', 'Helvetica Neue', Helvetica, sans-serif; font-size: 16px; line-height: 22px; color: #000000; padding: 10px; text-align: left;" class="center-on-narrow">
+											<table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" style="margin: auto">
+												<tr>
+													<td style="border-radius: 3px; background: #ffc627; text-align: center;" class="button-td"> <a href="http://www.google.com" style="background: #ffc627; border: 15px solid #ffc627; font-family: sans-serif; font-size: 16px; line-height: .5; text-align: center; text-decoration: none; display: block; border-radius: 4px; font-weight: bold; width: 150px; text-decoration: none; color: #000000" class="button-a">
+                                    &nbsp;&nbsp;<span style="color:#000000;">Online</span><span class="arrow"> &#10142;</span>&nbsp;&nbsp;
+                                </a> </td>
+												</tr>
+											</table>
+										</td>
+									</tr>
+								</table>
+							</td>
+							<!-- Column : END -->
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<!-- 3 Columns Buttons : END -->
+		</table>
+		<!-- Email Body : END -->
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" width="600" style="margin: 0;padding:0;vertical-align:baseline;" class="email-container" bgcolor="#ffc627">
+			<!-- 2 Even Columns : BEGIN -->
+			<tr>
+				<td bgcolor="#000000" align="center" valign="top" style="">
+					<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+						<tr>
+							<!-- Column : BEGIN -->
+							<td width="100%" class="stack-column-center">
+								<table role="presentation" cellspacing="0" cellpadding="0" border="0">
+									<tr>
+										<td height="1" width="100%" class="center-on-narrow"></td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td bgcolor="#000000" align="center" valign="top" style="">
+					<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+						<tr>
+							<!-- Column : BEGIN -->
+							<td width="35%" class="stack-column-center">
+								<table role="presentation" cellspacing="0" cellpadding="0" border="0">
+									<tr>
+										<td style="font-family: Arial, 'Roboto', 'Helvetica Neue', Helvetica, sans-serif; font-size: 20px; line-height: 22px; color: #ffffff; padding: 10px; text-align: left;" class="center-on-narrow"> <a href="http://thrive.asu.edu" target="_blank" style="text-decoration: none;color: #ffffff"><strong>Learn to <span style="background: #ffc627; color: #000000;">&nbsp;thrive&nbsp;</span></strong> <span style="font-size:10px">&copy;</span></a></td>
+									</tr>
+								</table>
+							</td>
+							<!-- Column : END -->
+							<!-- Column : BEGIN -->
+							<td width="65%" class="stack-column-center">
+								<table role="presentation" cellspacing="0" cellpadding="0" border="0">
+									<tr>
+										<td style="font-family: Arial, 'Roboto', 'Helvetica Neue', Helvetica, sans-serif; font-size: 20px; line-height: 22px; color: #ffc627; padding: 10px; text-align: left;" class="center-on-narrow"> <strong><a href="https://about.asu.edu/rankings" style="text-decoration: none; color: #ffc627">ASU is #1 in the U.S. for innovation.</a></strong> </td>
+									</tr>
+								</table>
+							</td>
+							<!-- Column : END -->
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<!-- 2 Even Columns : END -->
+		</table>
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" width="600" style="margin: 0;padding:0;vertical-align:baseline;display:block;" class="email-container" bgcolor="#f1f1f1">
+			<tr>
+				<td align="center" valign="top" style="padding: 10px;">
+					<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+						<tr>
+							<!-- Column : BEGIN -->
+							<td class="stack-column-center">
+								<table role="presentation" cellspacing="0" cellpadding="0" border="0">
+									<tr>
+										<td style="text-align: center;">
+											<a href="#"><img src="http://image.reply.asu.edu/lib/fe8d137272610d7c76/m/1/ce10656b-000e-450d-ac9c-ca8947f78fea.png" width="50" alt=""></a>
+										</td>
+										<td style="text-align: center;">
+											<a href="#"><img src="http://image.reply.asu.edu/lib/fe8d137272610d7c76/m/1/d84ec11e-2078-4db9-9cdd-3f14617fa0ae.png" width="50" alt=""></a>
+										</td>
+										<td style="text-align: center;">
+											<a href="#"><img src="http://image.reply.asu.edu/lib/fe8d137272610d7c76/m/1/096dd322-c205-434e-8299-5a4aefa170e8.png" width="50" alt=""></a>
+										</td>
+										<td style="text-align: center;">
+											<a href="#"><img src="http://image.reply.asu.edu/lib/fe8d137272610d7c76/m/1/ab218cde-5fcf-4478-bf3e-df6b4678f90a.png" width="50" alt=""></a>
+										</td>
+									</tr>
+								</table>
+							</td>
+							<!-- Column : END -->
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+		<!-- Email Footer : BEGIN -->
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" width="600" style="margin: auto; border-collapse: collapse;" class="email-container">
+			<tr>
+				<td style="padding: 10px;width: 100%;font-size: 10px; font-family: Arial, 'Roboto', 'Helvetica Neue', Helvetica, sans-serif; line-height:12px; text-align: center; color: #888888;"> Sent with &hearts; from ASU
+					<br>
+					<br> By providing your email address, you gave Arizona State University permission to send electronic communications.
+					<br>
+					<br> Arizona State University | Admission Services | PO Box 871002 | Tempe, AZ 85287-1002
+					<br>
+					<br>
+					<webversion style="color:#8c1d40; text-decoration:none; font-weight: bold;"><span style="color:#8C1D40;border-bottom:1px dotted #8c1d40;">View online</span></webversion> |
+					<unsubscribe style="color:#888888; text-decoration:none;"><span style="color:#888888;border-bottom:1px dotted #888888;">Unsubscribe</span></unsubscribe> | <a href="http://www.asu.edu/privacy/" target="_blank" style="color:#888888; text-decoration:none;"><span style="color: #888888; border-bottom: 1px dotted #888888">Privacy Policy</span></a> | (ECOMM XXXX) </td>
+			</tr>
+		</table>
+		<!-- Email Footer : END -->
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" width="600" style="margin: 0;padding:0;vertical-align:baseline;display:block;" class="email-container" bgcolor="#f1f1f1">
+			<tr>
+				<td align="center" valign="top" style="padding: 10px;">
+					<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+						<tr>
+							<!-- Column : BEGIN -->
+							<td>
+								<table role="presentation" cellspacing="0" cellpadding="0" border="0">
+									<tr>
+										<td style="font-family: Arial, 'Roboto', 'Helvetica Neue', Helvetica, sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: center;"> Check out our mobile app: </td>
+									</tr>
+								</table>
+							</td>
+							<!-- Column : END -->
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" width="600" style="margin: 0;padding:0;vertical-align:baseline;display:block;" class="email-container" bgcolor="#f1f1f1">
+			<tr>
+				<td align="center" valign="top" style="padding:0;">
+					<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+						<tr>
+							<!-- Column : BEGIN -->
+							<td>
+								<table role="presentation" cellspacing="0" cellpadding="2" border="0">
+									<tr>
+										<td style="text-align: center;">
+											<a href="https://itunes.apple.com/us/app/arizona-state-university/id453761080?mt=8" target="_blank"><img width="125" src="http://i.imgur.com/oT3S15G.png" alt=""></a>
+										</td>
+										<td style="text-align: center;">
+											<a href="https://play.google.com/store/apps/details?id=edu.asu.mobile.android.test&hl=en" target="_blank"><img width="125" src="http://i.imgur.com/iEAb94P.png" alt=""></a>
+										</td>
+									</tr>
+								</table>
+								<br> </td>
+							<!-- Column : END -->
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+	</center>
+</body>
+
+</html>
