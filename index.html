@@ -110,28 +110,6 @@
 	<style>
 		/* What it does: Hover styles for buttons */
 		
-		.button-td,
-		.button-a {
-			transition: all 100ms ease-in;
-		}
-		
-		.button-td:hover,
-		.button-a:hover {
-			background: #ffd35a !important;
-			border-color: #ffd35a !important;
-		}
-		
-		.button-a .arrow {
-			display: none;
-		}
-		
-		.button-a:hover .arrow {
-			display: inline-block;
-			-webkit-animation: slideIn .4s forwards;
-			-moz-animation: slideIn .4s forwards;
-			animation: slideIn .4s forwards;
-		}
-		
 		@-webkit-keyframes slideIn {
 			0% {
 				transform: translateX(-5px);
@@ -157,6 +135,54 @@
 			100% {
 				transform: translateX(0);
 			}
+		}
+		
+		.button span {
+			cursor: pointer;
+			display: inline-block;
+			position: relative;
+			transition: 0.5s;
+		}
+		
+		.button {
+			background: #ffc627 !important;
+			border: 15px solid #ffc627 !important;
+			transition: .05s;
+		}
+		
+		.button:hover {
+			background: #ffd35a !important;
+			border: 15px solid #ffd35a !important;
+			transition: .05s;
+		}
+		
+		.button span:after {
+			content: '\2192';
+			position: absolute;
+			opacity: 0;
+			top: 0;
+			right: -5px;
+			transition: 0.5s;
+			font-weight: bold;
+		}
+		
+		.button:hover span {
+			padding-right: 18px;
+		}
+		
+		.button:hover span:after {
+			opacity: 1;
+			right: 0;
+		}
+		
+		.link {
+			color: #8c1d40 !important;
+			transition: 0.5s !important;
+		}
+		
+		.link:hover {
+			color: #cb2a5d !important;
+			transition: 0.5s !important;
 		}
 		
 		.bannerIMG {
@@ -236,13 +262,13 @@
 			</tr>
 			<!-- 1 Column Text : BEGIN -->
 			<tr>
-				<td style="text-align: left; font-family: Arial, 'Roboto', 'Helvetica Neue', Helvetica, sans-serif; font-size: 16px; line-height: 22px; color: #000000; padding: 10px"> Maecenas sed ante pellentesque, posuere leo id, eleifend dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent laoreet malesuada cursus. Maecenas scelerisque congue eros eu posuere. Praesent in felis ut velit pretium lobortis rhoncus ut&nbsp;erat.
+				<td style="text-align: left; font-family: Arial, 'Roboto', 'Helvetica Neue', Helvetica, sans-serif; font-size: 16px; line-height: 22px; color: #000000; padding: 10px"> Maecenas sed ante pellentesque, posuere leo id, eleifend dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent laoreet malesuada cursus. Maecenas scelerisque congue eros eu posuere. Praesent in felis ut velit pretium lobortis rhoncus ut&nbsp;erat <a name="quick experience survey" title="quick experience survey" href="https://requestinfo.asu.edu/node/23" target="_blank" style="color :#8C1D40; text-decoration: none;"><span class="link" style="color :#8C1D40; border-bottom: 1px dotted #8c1d40;"><strong>quick experience survey</strong></span></a>.
 					<br>
 					<br>
 					<table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" style="margin: auto">
 						<tr>
-							<td style="border-radius: 3px; background: #ffc627; text-align: center;" class="button-td"> <a href="http://my.asu.edu" target="_blank" style="background: #ffc627; border: 15px solid #ffc627; font-family: sans-serif; font-size: 16px; line-height: .5; text-align: center; text-decoration: none; display: block; border-radius: 4px; font-weight: bold; width: 250px; text-decoration: none; color: #000000" class="button-a">
-                                    &nbsp;&nbsp;<span style="color:#000000;">Log into My ASU</span><span class="arrow"> &#10142;</span>&nbsp;&nbsp;
+							<td style="border-radius: 3px; background: #ffc627; text-align: center;"> <a href="http://my.asu.edu" target="_blank" style="background: #ffc627; border: 15px solid #ffc627; font-family: sans-serif; font-size: 16px; line-height: .5; text-align: center; text-decoration: none; display: block; border-radius: 4px; font-weight: bold; width: 250px; text-decoration: none; color: #000000" class="button">
+                                    &nbsp;&nbsp;<span style="color:#000000;">Log into My ASU</span>&nbsp;&nbsp;
                                 </a> </td>
 						</tr>
 					</table>
@@ -288,8 +314,8 @@
 										<td style="font-family: Arial, 'Roboto', 'Helvetica Neue', Helvetica, sans-serif; font-size: 16px; line-height: 22px; color: #000000; padding: 10px; text-align: left;" class="center-on-narrow">
 											<table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" style="margin: auto">
 												<tr>
-													<td style="border-radius: 3px; background: #ffc627; text-align: center;" class="button-td"> <a href="https://about.asu.edu/rankings" target="_blank" style="background: #ffc627; border: 15px solid #ffc627; font-family: sans-serif; font-size: 16px; line-height: .5; text-align: center; text-decoration: none; display: block; border-radius: 4px; font-weight: bold; width: 250px; text-decoration: none; color: #000000" class="button-a">
-                                    &nbsp;&nbsp;<span style="color:#000000;">Learn about innovation</span><span class="arrow"> &#10142;</span>&nbsp;&nbsp;
+													<td style="border-radius: 3px; background: #ffc627; text-align: center;"> <a href="https://about.asu.edu/rankings" target="_blank" style="background: #ffc627; border: 15px solid #ffc627; font-family: sans-serif; font-size: 16px; line-height: .5; text-align: center; text-decoration: none; display: block; border-radius: 4px; font-weight: bold; width: 250px; text-decoration: none; color: #000000" class="button">
+                                    &nbsp;&nbsp;<span style="color:#000000;">Learn about innovation</span>&nbsp;&nbsp;
                                 </a> </td>
 												</tr>
 											</table>
@@ -305,8 +331,8 @@
 										<td style="font-family: Arial, 'Roboto', 'Helvetica Neue', Helvetica, sans-serif; font-size: 16px; line-height: 22px; color: #000000; padding: 10px; text-align: left;" class="center-on-narrow">
 											<table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" style="margin: auto">
 												<tr>
-													<td style="border-radius: 3px; background: #ffc627; text-align: center;" class="button-td"> <a href="http://visit.asu.edu" style="background: #ffc627; border: 15px solid #ffc627; font-family: sans-serif; font-size: 16px; line-height: .5; text-align: center; text-decoration: none; display: block; border-radius: 4px; font-weight: bold; width: 250px; text-decoration: none; color: #000000" class="button-a">
-                                    &nbsp;&nbsp;<span style="color:#000000;">Visit ASU</span><span class="arrow"> &#10142;</span>&nbsp;&nbsp;
+													<td style="border-radius: 3px; background: #ffc627; text-align: center;" class="button-td"> <a href="http://visit.asu.edu" style="background: #ffc627; border: 15px solid #ffc627; font-family: sans-serif; font-size: 16px; line-height: .5; text-align: center; text-decoration: none; display: block; border-radius: 4px; font-weight: bold; width: 250px; text-decoration: none; color: #000000" class="button">
+                                    &nbsp;&nbsp;<span style="color:#000000;">Visit ASU</span>&nbsp;&nbsp;
                                 </a> </td>
 												</tr>
 											</table>
@@ -370,8 +396,8 @@
 										<td style="font-family: Arial, 'Roboto', 'Helvetica Neue', Helvetica, sans-serif; font-size: 16px; line-height: 22px; color: #000000; padding: 10px; text-align: left;" class="center-on-narrow">
 											<table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" style="margin: auto">
 												<tr>
-													<td style="border-radius: 3px; background: #ffc627; text-align: center;" class="button-td"> <a href="http://www.google.com" style="background: #ffc627; border: 15px solid #ffc627; font-family: sans-serif; font-size: 16px; line-height: .5; text-align: center; text-decoration: none; display: block; border-radius: 4px; font-weight: bold; width: 150px; text-decoration: none; color: #000000" class="button-a">
-                                    &nbsp;&nbsp;<span style="color:#000000;">Undergraduate</span><span class="arrow"> &#10142;</span>&nbsp;&nbsp;
+													<td style="border-radius: 3px; background: #ffc627; text-align: center;" class="button-td"> <a href="http://www.google.com" style="background: #ffc627; border: 15px solid #ffc627; font-family: sans-serif; font-size: 16px; line-height: .5; text-align: center; text-decoration: none; display: block; border-radius: 4px; font-weight: bold; width: 150px; text-decoration: none; color: #000000" class="button">
+                                    &nbsp;&nbsp;<span style="color:#000000;">Undergraduate</span>&nbsp;&nbsp;
                                 </a> </td>
 												</tr>
 											</table>
@@ -387,8 +413,8 @@
 										<td style="font-family: Arial, 'Roboto', 'Helvetica Neue', Helvetica, sans-serif; font-size: 16px; line-height: 22px; color: #000000; padding: 10px; text-align: left;" class="center-on-narrow">
 											<table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" style="margin: auto">
 												<tr>
-													<td style="border-radius: 3px; background: #ffc627; text-align: center;" class="button-td"> <a href="http://www.google.com" style="background: #ffc627; border: 15px solid #ffc627; font-family: sans-serif; font-size: 16px; line-height: .5; text-align: center; text-decoration: none; display: block; border-radius: 4px; font-weight: bold; width: 150px; text-decoration: none; color: #000000" class="button-a">
-                                    &nbsp;&nbsp;<span style="color:#000000;">Graduate</span><span class="arrow"> &#10142;</span>&nbsp;&nbsp;
+													<td style="border-radius: 3px; background: #ffc627; text-align: center;" class="button-td"> <a href="http://www.google.com" style="background: #ffc627; border: 15px solid #ffc627; font-family: sans-serif; font-size: 16px; line-height: .5; text-align: center; text-decoration: none; display: block; border-radius: 4px; font-weight: bold; width: 150px; text-decoration: none; color: #000000" class="button">
+                                    &nbsp;&nbsp;<span style="color:#000000;">Graduate</span>&nbsp;&nbsp;
                                 </a> </td>
 												</tr>
 											</table>
@@ -404,8 +430,8 @@
 										<td style="font-family: Arial, 'Roboto', 'Helvetica Neue', Helvetica, sans-serif; font-size: 16px; line-height: 22px; color: #000000; padding: 10px; text-align: left;" class="center-on-narrow">
 											<table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" style="margin: auto">
 												<tr>
-													<td style="border-radius: 3px; background: #ffc627; text-align: center;" class="button-td"> <a href="http://www.google.com" style="background: #ffc627; border: 15px solid #ffc627; font-family: sans-serif; font-size: 16px; line-height: .5; text-align: center; text-decoration: none; display: block; border-radius: 4px; font-weight: bold; width: 150px; text-decoration: none; color: #000000" class="button-a">
-                                    &nbsp;&nbsp;<span style="color:#000000;">Online</span><span class="arrow"> &#10142;</span>&nbsp;&nbsp;
+													<td style="border-radius: 3px; background: #ffc627; text-align: center;" class="button-td"> <a href="http://www.google.com" style="background: #ffc627; border: 15px solid #ffc627; font-family: sans-serif; font-size: 16px; line-height: .5; text-align: center; text-decoration: none; display: block; border-radius: 4px; font-weight: bold; width: 150px; text-decoration: none; color: #000000" class="button">
+                                    &nbsp;&nbsp;<span style="color:#000000;">Online</span>&nbsp;&nbsp;
                                 </a> </td>
 												</tr>
 											</table>
@@ -447,7 +473,7 @@
 							<td width="35%" class="stack-column-center">
 								<table role="presentation" cellspacing="0" cellpadding="0" border="0">
 									<tr>
-										<td style="font-family: Arial, 'Roboto', 'Helvetica Neue', Helvetica, sans-serif; font-size: 20px; line-height: 22px; color: #ffc627; padding: 10px; text-align: left;" class="center-on-narrow"> <a href="http://thrive.asu.edu" target="_blank" style="text-decoration: none;color: #ffc627"><strong>Learn to <span style="background: #ffc627; color: #000000;">&nbsp;thrive&nbsp;</span></strong> <span style="font-size:10px">&copy;</span></a></td>
+										<td style="font-family: Arial, 'Roboto', 'Helvetica Neue', Helvetica, sans-serif; font-size: 20px; line-height: 22px; color: #ffffff; padding: 10px; text-align: left;" class="center-on-narrow"> <a href="http://thrive.asu.edu" target="_blank" style="text-decoration: none;color: #ffffff"><strong>Learn to <span style="background: #ffc627; color: #000000;">&nbsp;thrive&nbsp;</span></strong> <span style="font-size:10px">&copy;</span></a></td>
 									</tr>
 								</table>
 							</td>
@@ -456,7 +482,7 @@
 							<td width="65%" class="stack-column-center">
 								<table role="presentation" cellspacing="0" cellpadding="0" border="0">
 									<tr>
-										<td style="font-family: Arial, 'Roboto', 'Helvetica Neue', Helvetica, sans-serif; font-size: 20px; line-height: 22px; color: #ffffff; padding: 10px; text-align: left;" class="center-on-narrow"> <strong><a href="https://about.asu.edu/rankings" style="text-decoration: none; color: #ffffff">ASU is #1 in the U.S. for innovation.</a></strong> </td>
+										<td style="font-family: Arial, 'Roboto', 'Helvetica Neue', Helvetica, sans-serif; font-size: 20px; line-height: 22px; color: #ffc627; padding: 10px; text-align: left;" class="center-on-narrow"> <strong><a href="https://about.asu.edu/rankings" style="text-decoration: none; color: #ffc627">ASU is #1 in the U.S. for innovation</a></strong> </td>
 									</tr>
 								</table>
 							</td>
